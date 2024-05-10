@@ -175,10 +175,10 @@ if __name__ == '__main__':
     device = torch.device(f'cuda:{args.device}') if torch.cuda.is_available() else 'cpu'
 
     config = {
-        'config': 'runs/tsh/config.json',
-        'run_dir': 'runs/tsh',
-        'enroll_config': 'runs/embed/config.json',
-        'enroll_run_dir': 'runs/embed'
+        'config': 'experiments/tsh/config.json',
+        'run_dir': 'experiments/tsh',
+        'enroll_config': 'experiments/embed/config.json',
+        'enroll_run_dir': 'experiments/embed'
     }
 
     args.config = config['config']
