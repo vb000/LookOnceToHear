@@ -1,6 +1,8 @@
 # Look Once to Hear
 
-This repository provides code for the paper, __Look Once to Hear: Target Speech Hearing with Noisy Examples__. This paper won an honarable mention award at CHI 2024. 
+This repository provides code for the paper, __Look Once to Hear: Target Speech Hearing with Noisy Examples__. This paper won an honarable mention award at CHI 2024.
+
+https://github.com/vb000/LookOnceToHear/assets/16723254/0d0df10f-91cb-4328-9b35-7b924bebcd68
 
 ## Setup
 
