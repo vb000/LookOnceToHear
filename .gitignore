@@ -162,12 +162,8 @@ cython_debug/
 # All directories in data/
 data/**/*
 wandb/
-runs/
 *.pth
-slurm_conf.json
 .*.swp
 .*.swo
+*.ckpt
 
-motion_simulator/libs
-motion_simulator/obj
-motion_simulator/audio

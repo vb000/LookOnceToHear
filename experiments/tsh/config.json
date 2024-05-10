@@ -1,0 +1,98 @@
+{
+    "pl_module": "src.ts_hear_embed_pl_module.PLModule",
+    "pl_module_args": {
+        "model": "src.models.tfgridnet_realtime.net.Net",
+        "model_params": {
+            "embed_dim": 256,
+            "stft_chunk_size": 128,
+            "stft_pad_size": 64,
+            "num_ch": 2,
+            "D": 64,
+            "L": 4,
+            "I": 1,
+            "J": 1,
+            "B": 3,
+            "H": 64,
+            "local_atten_len": 50,
+            "use_attn": true,
+            "lookahead": true,
+            "chunk_causal": true
+        },
+        "scheduler": "torch.optim.lr_scheduler.ReduceLROnPlateau",
+        "scheduler_params":{
+            "mode": "min",
+            "patience": 5,
+            "factor": 0.5,
+            "min_lr": 1e-6
+        },
+        "lr": 5e-4
+    },
+    "pl_logger": "src.ts_hear_embed_pl_module.Logger",
+    "train_dataset": "src.datasets.MixLibriSpeechNoisyEnrollNorm.MixLibriSpeechNoisyEnroll",
+    "train_data_args": {
+        "fg_dir": "data/MixLibriSpeech/librispeech_scaper_fmt/train-clean-360",
+        "bg_dir": "data/MixLibriSpeech/wham_noise",
+        "jams_dir": "data/MixLibriSpeech/jams/train-clean-360",
+        "embed_dir": "data/MixLibriSpeech/librispeech_dvector_embeddings/train-clean-360",
+        "hrtf_list": [
+            "data/MixLibriSpeech/CIPIC/train_hrtf.txt",
+            "data/RRBRIR/train_hrtf.txt",
+            "data/ASH-Listening-Set-8.0/BRIRs",
+            "data/CATT_RIRs/Binaural/16k"
+        ],
+        "hrtf_type": "MultiCh",
+        "dset": "train",
+        "num_enroll": 1,
+        "noise_scale": [3.0, 10.0],
+        "max_shift": 16,
+        "sr": 16000,
+        "resample_rate": null
+    },
+    "val_dataset": "src.datasets.MixLibriSpeechNoisyEnrollNorm.MixLibriSpeechNoisyEnroll",
+    "val_data_args": {
+        "fg_dir": "data/MixLibriSpeech/librispeech_scaper_fmt/dev-clean",
+        "bg_dir": "data/MixLibriSpeech/wham_noise",
+        "jams_dir": "data/MixLibriSpeech/jams/dev-clean",
+        "embed_dir": "data/MixLibriSpeech/librispeech_dvector_embeddings/dev-clean",
+        "hrtf_list": [
+            "data/MixLibriSpeech/CIPIC/val_hrtf.txt",
+            "data/RRBRIR/val_hrtf.txt",
+            "data/ASH-Listening-Set-8.0/BRIRs",
+            "data/CATT_RIRs/Binaural/16k"
+        ],
+        "hrtf_type": "MultiCh",
+        "dset": "val",
+        "num_enroll": 1,
+        "noise_scale": [3.0, 10.0],
+        "max_shift": 16,
+        "sr": 16000,
+        "resample_rate": null
+    },
+    "test_dataset": "src.datasets.MixLibriSpeechNoisyEnrollNorm.MixLibriSpeechNoisyEnroll",
+    "test_data_args": {
+        "fg_dir": "data/MixLibriSpeech/librispeech_scaper_fmt/test-clean",
+        "bg_dir": "data/MixLibriSpeech/wham_noise",
+        "jams_dir": "data/MixLibriSpeech/jams/test-clean",
+        "embed_dir": "data/MixLibriSpeech/librispeech_dvector_embeddings/test-clean",
+        "hrtf_list": [
+            "data/MixLibriSpeech/CIPIC/test_hrtf.txt",
+            "data/RRBRIR/test_hrtf.txt",
+            "data/ASH-Listening-Set-8.0/BRIRs",
+            "data/CATT_RIRs/Binaural/16k"
+        ],
+        "hrtf_type": "MultiCh",
+        "dset": "test",
+        "num_enroll": 1,
+        "noise_scale": [3.0, 10.0],
+        "max_shift": 16,
+        "sr": 16000,
+        "use_motion": false,
+        "motion_use_piecewise_arcs": false,
+        "augment": false,
+        "resample_rate": null
+    },
+    "epochs": 100,
+    "batch_size": 8,
+    "eval_batch_size": 10,
+    "num_workers": 16
+}
