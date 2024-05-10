@@ -12,7 +12,7 @@ https://github.com/vb000/LookOnceToHear/assets/16723254/49483e4d-9ebe-4c56-a84e-
 
 ## Training
 
-Training data includes clean speech, background sounds, head-realted transfer functions (HRTFs) and binaural room impulse responses (BRIRs). We use [Scaper](https://github.com/justinsalamon/scaper) toolkit to synthetically generate audio mixtures. Each audio mixture is generated on-the-fly, during training or evaluation, using Scaper's generate_from_jams function on a .jams specification file.
+Training data includes clean speech, background sounds, head-realted transfer functions (HRTFs) and binaural room impulse responses (BRIRs). We use [Scaper](https://github.com/justinsalamon/scaper) toolkit to synthetically generate audio mixtures. Each audio mixture is generated on-the-fly, during training or evaluation, using Scaper's `generate_from_jams` function on a `.jams` specification file.
 
 We provide self-contained datasets [here](https://drive.google.com/drive/u/1/folders/1-Jx23GXdjPe33EF5jGZpj6zn-kIm5jHR), with the source `.jams` specifications we used for training. To perform a training run, it is sufficient to download the `.zip` files provided there, unzip the contents to `data/` directory and run this command:
 
