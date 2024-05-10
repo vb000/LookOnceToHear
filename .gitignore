@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 
 # All directories in data/
-data/**/*
+data/*/
 wandb/
 *.pth
 .*.swp
