@@ -8,14 +8,18 @@
 
 ## Training
 
-Download the data [here](https://drive.google.com/drive/u/1/folders/1-Jx23GXdjPe33EF5jGZpj6zn-kIm5jHR) and unzip the contents to `data/` directory.
+Training data includes clean speech, background sounds, head-realted transfer functions (HRTFs) and binaural room impulse responses (BRIRs). We use [Scaper](https://github.com/justinsalamon/scaper) toolkit to synthetically generate audio mixtures. Each audio mixture is generated on-the-fly, during training or evaluation, using Scaper's generate_from_jams function on a .jams specification file.
+
+We provide self-contained datasets [here](https://drive.google.com/drive/u/1/folders/1-Jx23GXdjPe33EF5jGZpj6zn-kIm5jHR), with the source `.jams` specifications we used for training. To perform a training run, it is sufficient to download the `.zip` files provided there, unzip the contents to `data/` directory and run one of these commands:
 
     # New training run
-    python -m src.trainer --config <configs/speakerbeam.json> --run_dir <runs/speakerbeam> [--frac <0.05 (% train/val batches)>]
+    python -m src.trainer --config <experiments/tsh/config.json> --run_dir <experiments/tsh> [--frac <0.05 (% train/val batches)>]
 
     # Resume training
-    python -m src.trainer --config <runs/speakerbeam/config.json> --run_dir <runs/speakerbeam> --resume
+    python -m src.trainer --config <experiments/tsh/config.json> --run_dir <experiments/tsh> --resume
 
 ## Evaluation
 
-    python -m src.trainer --config <configs/speakerbeam.json>  --test [--frac <0.05 (% test batches)>]
+Evaluation is done on speech mixture in similar format as training samples. Checkpoints of the embedding model and the target speech hearing (TSH) model are available [here](https://drive.google.com/file/d/12dJNZeHWd764cCYnSoCBF9wRtvFuzUuQ/view?usp=sharing).
+
+    PYTHONPATH=. python src/ts_hear_test.py
