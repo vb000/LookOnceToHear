@@ -1,5 +1,7 @@
 # Look Once to Hear
 
+This repository provides code for the paper, __Look Once to Hear: Target Speech Hearing with Noisy Examples__. This paper won an honarable mention award at CHI 2024. 
+
 ## Setup
 
     conda create -n ts-hear python=3.9
