@@ -1,6 +1,6 @@
 # Look Once to Hear
 
-This repository provides code for the paper, __Look Once to Hear: Target Speech Hearing with Noisy Examples__. This paper won an honarable mention 🏆 at CHI 2024. __Look once to hear__ is an intelligent hearable system where users choose to hear a target speaker by just looking at them for a few seconds.
+This repository provides code for the paper, __Look Once to Hear: Target Speech Hearing with Noisy Examples__. This paper won an honorable mention 🏆 at CHI 2024. __Look once to hear__ is an intelligent hearable system where users choose to hear a target speaker by just looking at them for a few seconds.
 
 https://github.com/vb000/LookOnceToHear/assets/16723254/49483e4d-9ebe-4c56-a84e-43c30d1cc3b9
 
