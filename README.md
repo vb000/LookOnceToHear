@@ -28,4 +28,4 @@ To resume a partial run:
 
 Evaluation is done on speech mixture in similar format as training samples. Checkpoints of the embedding model and the target speech hearing (TSH) model are available [here](https://drive.google.com/file/d/1CP0zbZExcqvNLdP9epyhY4fEVp_oQr59/view?usp=sharing).
 
-    python src.ts_hear_test
+    python -m src.ts_hear_test
