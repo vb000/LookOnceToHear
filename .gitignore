@@ -159,8 +159,21 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# All directories in data/
-data/**/*
+# Datasets under data/: ignore downloads and generated artifacts;
+# small tracked files (README.md, *_hrtf.txt split lists) stay visible
+data/**/*.tar
+data/**/*.tar.gz
+data/**/*.zip
+data/**/*.sofa
+data/**/*.wav
+data/**/*.flac
+data/**/*.jams
+data/**/*.pt
+data/MixLibriSpeech/LibriSpeech/
+data/MixLibriSpeech/jams/
+data/MixLibriSpeech/wham_noise/
+data/ASH-Listening-Set-8.0/
+data/CATT_RIRs/
 wandb/
 *.pth
 .*.swp
